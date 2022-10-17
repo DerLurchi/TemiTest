@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.temitest.ui.theme.TemiTestTheme
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.res.painterResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
+    val hintergrund = painterResource(id = R.drawable.androidparty)
+
     Surface(color = Color.Cyan) {
         Text(text = "Hello, my name is $name!", modifier = Modifier.padding(24.dp))
     }
