@@ -24,8 +24,10 @@
             </intent-filter>
 
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="com.robotemi.sdk.metadata.SKILL"
+                android:value="@string/app_name" />
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
         </activity>
     </application>
 
