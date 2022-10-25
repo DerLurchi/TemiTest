@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.temitest.ui.theme.TemiTestTheme
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.ui.res.painterResource
 import com.robotemi.sdk.Robot
@@ -71,7 +74,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TemiTestTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                     Greeting("Temi")
                 }
             }
@@ -81,10 +84,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    val hintergrund = painterResource(id = R.drawable.androidparty)
+    val hintergrund = painterResource(id = R.drawable.tom)
 
     Surface(color = Color.Cyan) {
-        Image(painter = hintergrund, contentDescription = null, modifier = Modifier.fillMaxHeight())
+        Image(painter = hintergrund, contentDescription = "tom",
+        modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+            )
         Text(text = "Hello, my name is $name!", modifier = Modifier.padding(24.dp))
     }
 }
